@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Zlogo.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Zlogo.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Zlogo.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="0 Summary​    LncRNA Haunt位于HoxA Gene Family前40kb，对HoxA基因家族有调控作用。为研究其作用机制，作者通过一系列敲除及过表达实验发现，RNAi或者对基因座破坏较小的敲除均会导致HoxA表达上调；而对基因座破坏较大的敲除却会抑制HoxA表达；此外，原位过表达或者删除其内含子也会使HoxA表达下调，故而推测Haunt LncRNA会抑制HoxA的表达，">
+<meta name="keywords" content="LncRNA,Enhancer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Opposing Roles for the lncRNA Haunt and Its Genomic Locus in Regulating HOXA Gene Activation during Embryonic Stem Cell Differentiation">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/Differentiation/index.html">
+<meta property="og:site_name" content="Zyq&#39;s Blog">
+<meta property="og:description" content="0 Summary​    LncRNA Haunt位于HoxA Gene Family前40kb，对HoxA基因家族有调控作用。为研究其作用机制，作者通过一系列敲除及过表达实验发现，RNAi或者对基因座破坏较小的敲除均会导致HoxA表达上调；而对基因座破坏较大的敲除却会抑制HoxA表达；此外，原位过表达或者删除其内含子也会使HoxA表达下调，故而推测Haunt LncRNA会抑制HoxA的表达，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/habz5aeEwF2ETZ13d*zlj86XEPktpVo*5WymsFdWAl0!/b/dL8AAAAAAAAA&bo=PwLUAQAAAAADB8o!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/6CX2JhFLJsaHHQ7L5j5amgzYsgjmgrdRC7.oqvfWKOY!/b/dL4AAAAAAAAA&bo=8gIDAgAAAAADB9M!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/7QbfYcGhvb9tLg4YnhqoYNMwydssg1cZdM1ueVuvUX0!/b/dL8AAAAAAAAA&bo=zwPJAQAAAAADFzY!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/YjYdgSewO3qx*lJw.U.h9rsZmuFkMPgrwCBThef3uKw!/b/dMMAAAAAAAAA&bo=AgJxAQAAAAADB1I!&rf=viewer_4">
+<meta property="og:image" content="http://a4.qpic.cn/psb?/V10Qub870wSI7H/*fWABuUy4pGeycrsC9TZIPR03aUEy5ejCeJxLqTb8FY!/b/dL8AAAAAAAAA&ek=1&kp=1&pt=0&bo=wQHFAQAAAAADFzY!&tl=1&vuin=978243307&tm=1556197200&sce=60-2-2&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/0.tcYzQuI0dz1kmhS8lay6Pe2PQEm7GrMhb6Nh0du8g!/b/dL8AAAAAAAAA&bo=UAM5AQAAAAADF1k!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/ocTC49tz3trKNp69mfiWLGoBjtqrlnQOXgJ.hQRToD0!/b/dL8AAAAAAAAA&bo=PwPqAQAAAAADB*U!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/f1pVGgVlpad3IJINvbCxTbxBvueU46f26umWZ56XJ1k!/b/dDUBAAAAAAAA&bo=zQIpAgAAAAADF9Y!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/DKM.zq5ywY68vU99y4uKzHThAZAOA7yQj.F8F.*COTg!/b/dMAAAAAAAAAA&bo=JgPwAQAAAAADB*Y!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/habz5aeEwF2ETZ13d*zlj86XEPktpVo*5WymsFdWAl0!/b/dL8AAAAAAAAA&bo=PwLUAQAAAAADF9o!&rf=viewer_4">
+<meta property="og:updated_time" content="2019-04-25T14:52:26.143Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Opposing Roles for the lncRNA Haunt and Its Genomic Locus in Regulating HOXA Gene Activation during Embryonic Stem Cell Differentiation">
+<meta name="twitter:description" content="0 Summary​    LncRNA Haunt位于HoxA Gene Family前40kb，对HoxA基因家族有调控作用。为研究其作用机制，作者通过一系列敲除及过表达实验发现，RNAi或者对基因座破坏较小的敲除均会导致HoxA表达上调；而对基因座破坏较大的敲除却会抑制HoxA表达；此外，原位过表达或者删除其内含子也会使HoxA表达下调，故而推测Haunt LncRNA会抑制HoxA的表达，">
+<meta name="twitter:image" content="http://m.qpic.cn/psb?/V10Qub870wSI7H/habz5aeEwF2ETZ13d*zlj86XEPktpVo*5WymsFdWAl0!/b/dL8AAAAAAAAA&bo=PwLUAQAAAAADB8o!&rf=viewer_4">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/04/25/Differentiation/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Opposing Roles for the lncRNA Haunt and Its Genomic Locus in Regulating HOXA Gene Activation during Embryonic Stem Cell Differentiation | Zyq's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zyq's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">A corner for recording everything</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/25/Differentiation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eugene">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zyq's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Opposing Roles for the lncRNA Haunt and Its Genomic Locus in Regulating HOXA Gene Activation during Embryonic Stem Cell Differentiation
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-25 20:43:31 / 修改时间：22:52:26" itemprop="dateCreated datePublished" datetime="2019-04-25T20:43:31+08:00">2019-04-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Article/" itemprop="url" rel="index"><span itemprop="name">Article</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="0-Summary"><a href="#0-Summary" class="headerlink" title="0 Summary"></a>0 Summary</h2><p>​    <em>LncRNA Haunt位于HoxA Gene Family前40kb，对HoxA基因家族有调控作用。为研究其作用机制，作者通过一系列敲除及过表达实验发现，RNAi或者对基因座破坏较小的敲除均会导致HoxA表达上调；而对基因座破坏较大的敲除却会抑制HoxA表达；此外，原位过表达或者删除其内含子也会使HoxA表达下调，故而推测Haunt LncRNA会抑制HoxA的表达，而其DNA却对HoxA表达有Enhancer的活性。</em></p>
+<p><img src="http://m.qpic.cn/psb?/V10Qub870wSI7H/habz5aeEwF2ETZ13d*zlj86XEPktpVo*5WymsFdWAl0!/b/dL8AAAAAAAAA&amp;bo=PwLUAQAAAAADB8o!&amp;rf=viewer_4" alt="Haunt与HoxA作用示意图"></p>
+<h2 id="一、确定要研究的LncRNA"><a href="#一、确定要研究的LncRNA" class="headerlink" title="一、确定要研究的LncRNA"></a>一、确定要研究的LncRNA</h2><ol>
+<li><p>将细胞进行-Lif 2D、4D、6D的分化，并将挑选分化后的ME、NPC、NSC三类细胞</p>
+</li>
+<li><p>进行RNA-Seq，将七类细胞内高表达的LncRNA进行聚类，其中ESCs中高表达的LncRNA有83个，包括Haunt</p>
+</li>
+<li><p>以Haunt为例进行研究 <code>没搞懂为什么要挑选Haunt</code></p>
+</li>
+<li><p>根据研究以往的数据，在未进行-Lif分化时，Haunt的基因座及Promoter区有着大量多能性转录因子结合，如Oct4、Nanog等；还有许多代表转录活跃的信号，如p300、DNase I HS和H3K4me等的表观遗传标记，而有关基因沉默的表观遗传标记H3K27me3在其启动子区域并不明显。而进行-Lif分化6D时，其转录情况发生逆转</p>
+<p><img src="http://m.qpic.cn/psb?/V10Qub870wSI7H/6CX2JhFLJsaHHQ7L5j5amgzYsgjmgrdRC7.oqvfWKOY!/b/dL4AAAAAAAAA&amp;bo=8gIDAgAAAAADB9M!&amp;rf=viewer_4" alt="Haunt在分化前后基因修饰情况--CHIP-seq数据"></p>
+</li>
+<li><p>进行Northern发现Haunt在-Lif分化后迅速下调。</p>
+</li>
+</ol>
+<h2 id="二、进行各种敲除实验"><a href="#二、进行各种敲除实验" class="headerlink" title="二、进行各种敲除实验"></a>二、进行各种敲除实验</h2><ol>
+<li><p>首先经过RNAi发现其并不能在ESCs正常培养时影响多能性基因的表达，于是将目光放在分化过程中。</p>
+</li>
+<li><p>作者进行了一系列敲除包括pKO、P-exon KO、exon3 KO、58kb KO、Hoxa KO</p>
+<p><img src="http://m.qpic.cn/psb?/V10Qub870wSI7H/7QbfYcGhvb9tLg4YnhqoYNMwydssg1cZdM1ueVuvUX0!/b/dL8AAAAAAAAA&amp;bo=zwPJAQAAAAADFzY!&amp;rf=viewer_4" alt="敲除示意图"></p>
+</li>
+<li><p>而敲除实验与RNAi实验结果一致，未改变ESCs正常分化时基因的表达。而在-Lif分化过程中也未发现Haunt的缺失影响HoxA基因的表达。<code>-Lif分化时Haunt不是迅速下调吗？这是不应该过表达来进行实验吗？</code>因此作者用RA分化模型来进行实验。</p>
+</li>
+</ol>
+<h2 id="三、RA分化模型进行实验"><a href="#三、RA分化模型进行实验" class="headerlink" title="三、RA分化模型进行实验"></a>三、RA分化模型进行实验</h2><ol>
+<li><p>RA分化时，Haunt基因和HoxA基因均出现上调，Haunt上调时间早于HoxA基因，且距离Haunt越近的HoxA基因，其表达量上调越明显。</p>
+<p><img src="http://m.qpic.cn/psb?/V10Qub870wSI7H/YjYdgSewO3qx*lJw.U.h9rsZmuFkMPgrwCBThef3uKw!/b/dMMAAAAAAAAA&amp;bo=AgJxAQAAAAADB1I!&amp;rf=viewer_4" alt="ESC RA分化时Haunt及HoxA基因表达情况"></p>
+</li>
+<li><p>实验发现，在RA分化过程中，如果对其DNA破坏较小，那么降低Haunt表达量则HoxA基因上调（如RNAi或pKO或插入polyA）；如果破坏了其DNA且降低了Haunt表达，则HoxA基因下调（如58kb KO或P-exon2 KO）；如果对其DNA破坏较小但增强其RNA表达，则HoxA基因下调（如CAG KI，必须为原位过表达，这证明了是顺式作用）；如果破坏其DNA且增强了Haunt的表达，则会降低HoxA基因的表达，且这种情况下表达量最低。说明Haunt的DNA和RNA对HoxA作用相反，RNA抑制HoxA表达，DNA维持HoxA表达。</p>
+<p><img src="http://a4.qpic.cn/psb?/V10Qub870wSI7H/*fWABuUy4pGeycrsC9TZIPR03aUEy5ejCeJxLqTb8FY!/b/dL8AAAAAAAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wQHFAQAAAAADFzY!&amp;tl=1&amp;vuin=978243307&amp;tm=1556197200&amp;sce=60-2-2&amp;rf=viewer_4" alt="RNAseq"></p>
+<p><img src="http://m.qpic.cn/psb?/V10Qub870wSI7H/0.tcYzQuI0dz1kmhS8lay6Pe2PQEm7GrMhb6Nh0du8g!/b/dL8AAAAAAAAA&amp;bo=UAM5AQAAAAADF1k!&amp;rf=viewer_4" alt="RNAseq"></p>
+</li>
+</ol>
+<h2 id="四、分别探究DNA和RNA的作用机制"><a href="#四、分别探究DNA和RNA的作用机制" class="headerlink" title="四、分别探究DNA和RNA的作用机制"></a>四、分别探究DNA和RNA的作用机制</h2><ol>
+<li><p>DNA作用的研究</p>
+<p>通过CHIP-seq发现Haunt基因座上有RARE、DNase I敏感位点，还富含增强子活性标记，如H3K27ac、CTCF、Smc1。证明其可能具有增强子活性。而之前的CHIA-PET数据则证明Haunt基因座可能与HoxA基因互作。为了验证这个论点，作者进行3C实验来进行证明。结果说明Haunt基因座确实与HoxA基因存在互作。并且这种互作受RA诱导增强，而pKO细胞系RA诱导后互作更强，CAG细胞系RA诱导后互作变弱。证明其RNA可能对这种互作有抑制作用。</p>
+<p><img src="http://m.qpic.cn/psb?/V10Qub870wSI7H/ocTC49tz3trKNp69mfiWLGoBjtqrlnQOXgJ.hQRToD0!/b/dL8AAAAAAAAA&amp;bo=PwPqAQAAAAADB*U!&amp;rf=viewer_4" alt="CHIP-seq数据"></p>
+<p><img src="http://m.qpic.cn/psb?/V10Qub870wSI7H/f1pVGgVlpad3IJINvbCxTbxBvueU46f26umWZ56XJ1k!/b/dDUBAAAAAAAA&amp;bo=zQIpAgAAAAADF9Y!&amp;rf=viewer_4" alt="3C实验"></p>
+</li>
+<li><p>RNA作用的研究</p>
+<p>作者进行CHIRP实验来寻找与其RNA互作的DNA及RNA。</p>
+<ul>
+<li><p>在RNA-seq中，KO细胞系未检测到结合，WT则只检测到Haunt RNA，证明探针的特异性极佳。</p>
+</li>
+<li><p>在DNA-seq中，KO细胞系只检测到一些背景信号，而WT细胞系则检测到在Haunt基因座前后有大量结合，这种结合随着距Haunt基因座距离增长而减弱，这说明Haunt可能通过顺式作用结合其DNA进而抑制其DNA与HoxA基因的互作而使HoxA表达不能激活。</p>
+</li>
+<li><p>HoxA基因处只结合极少量Haunt RNA，但经过RA处理后HoxA出结合明显增多，且在HoxA5处出现一个高峰。由于Haunt会受RA诱导表达增多，可能由于其数量增多而导致的非特异性结合增多，因此作者比较了此处和别处的结合增长率，结果显示HoxA5、6处结合增长6-7倍，别处只有2-3倍，证明是特异性结合。</p>
+</li>
+<li>而RA处理后，pKO和WT相对于未经RA处理的细胞，HoxA处的抑制性表观遗传标记H3K27me3都有减少；而pKO相对于WT，其HoxA处的H3K27me3减少更加明显，而这种现象却未发生在H3K4me3上。这说明Haunt RNA很可能是通过特异性抑制HoxA处H3K27me3的去甲基化而抑制其表达。</li>
+</ul>
+<p><img src="http://m.qpic.cn/psb?/V10Qub870wSI7H/DKM.zq5ywY68vU99y4uKzHThAZAOA7yQj.F8F.*COTg!/b/dMAAAAAAAAAA&amp;bo=JgPwAQAAAAADB*Y!&amp;rf=viewer_4" alt="CHIRP数据"></p>
+</li>
+</ol>
+<h2 id="五、建模"><a href="#五、建模" class="headerlink" title="五、建模"></a>五、建模</h2><p>​    作者进行RNA测序，找到Haunt影响的基因，并进行聚类分析，最终建立模型。</p>
+<p>​    Haunt的DNA有Enhancer活性促进HoxA基因表达；而其RNA通过顺式作用结合在其DNA上阻断其DNA与HoxA基因的互作，还参与HoxA基因H3K27me3的重塑，抑制其去甲基化，通过这两种机制抑制HoxA表达。其DNA和RNA通过这种方式互相拮抗，达到微调HoxA基因表达的过程。</p>
+<p>​    <img src="http://m.qpic.cn/psb?/V10Qub870wSI7H/habz5aeEwF2ETZ13d*zlj86XEPktpVo*5WymsFdWAl0!/b/dL8AAAAAAAAA&amp;bo=PwLUAQAAAAADF9o!&amp;rf=viewer_4" alt="模型"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LncRNA/" rel="tag"># LncRNA</a>
+          
+            <a href="/tags/Enhancer/" rel="tag"># Enhancer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/23/Markdown的用法/" rel="next" title="Markdown的用法">
+                <i class="fa fa-chevron-left"></i> Markdown的用法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Eugene</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Eugene-Zheng" title="GitHub &rarr; https://github.com/Eugene-Zheng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:Zyq_2018@outlook.com" title="E-Mail &rarr; mailto:Zyq_2018@outlook.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-Summary"><span class="nav-number">1.</span> <span class="nav-text">0 Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、确定要研究的LncRNA"><span class="nav-number">2.</span> <span class="nav-text">一、确定要研究的LncRNA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、进行各种敲除实验"><span class="nav-number">3.</span> <span class="nav-text">二、进行各种敲除实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、RA分化模型进行实验"><span class="nav-number">4.</span> <span class="nav-text">三、RA分化模型进行实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、分别探究DNA和RNA的作用机制"><span class="nav-number">5.</span> <span class="nav-text">四、分别探究DNA和RNA的作用机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、建模"><span class="nav-number">6.</span> <span class="nav-text">五、建模</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
